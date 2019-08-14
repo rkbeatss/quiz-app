@@ -1,0 +1,133 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Open Sans', sans-serif;
+	color:black;
+}
+div{
+	margin:10px;
+}
+input{
+	width:100%;
+	border:0;
+	border-bottom: 2px solid #1976D2;
+}
+ul{
+	list-style-type:none;
+	width:400px;
+}
+li{
+	padding:20px;
+	border-radius:10px;
+	overflow:auto;
+}
+li:hover, li:focus {
+	background-color: rgba(51, 128, 255, 0.4);
+	outline:0;
+	cursor:pointer;
+}
+
+a{
+	color:black;
+}
+a:link{
+  text-decoration: none!important;
+}
+
+.grid-container{
+	display: grid;
+	grid-template-columns: auto auto;
+	background-color:#3380FF;
+	padding:5px;
+	border-radius:25px;
+}
+.grid-item{
+	background-color: rgba(255,255,255,0.8);
+	border: 1px solid rgba(0,0,0,0.5);
+	border-radius: 25px;
+	padding:20px;
+	font-size:30px;
+	text-align:center;
+}
+.grid-item:hover{
+	background-color: rgba(255,255,255,0.5);
+}
+.modal-container{
+	position:fixed;
+	top:0;
+	left:30%;
+	width:50%;
+	height:80%;
+	max-width:100%;
+	max-height:100%;
+	overflow:auto;
+	background-color:rgba(51,128,255,0.4);
+	box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
+	border-radius:10px;
+	animation:2s slide-down;
+	-webkit-animation: 2s slide-down;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;	
+
+	visibility: visible !important;		
+}
+.modal-content{
+	position:relative;
+	margin:auto;
+	padding:0;
+	width:100%;	
+}
+.modal-header{
+	position:relative;
+	width:100%;
+	padding:2px 16px;
+}
+.modal-body{
+	padding:2px 16px;
+	text-align: center;
+}
+
+
+@keyframes slide-down {
+	0% {
+		transform: translateY(-100%);
+	}
+	50%{
+		transform: translateY(8%);
+	}
+	65%{
+		transform: translateY(-4%);
+	}
+	80%{
+		transform: translateY(4%);
+	}
+	95%{
+		transform: translateY(-2%);
+	}			
+	100% {
+		transform: translateY(0%);
+	}		
+}
+
+@-webkit-keyframes slide-down {
+	0% {
+		-webkit-transform: translateY(-100%);
+	}
+	50%{
+		-webkit-transform: translateY(8%);
+	}
+	65%{
+		-webkit-transform: translateY(-4%);
+	}
+	80%{
+		-webkit-transform: translateY(4%);
+	}
+	95%{
+		-webkit-transform: translateY(-2%);
+	}			
+	100% {
+		-webkit-transform: translateY(0%);
+	}	
+}

@@ -1,0 +1,22 @@
+<html>
+{% extends "template.html" %}
+<head>
+</head>
+<body>
+{% block page_content %}
+<div>
+	<div class="row">
+	<ul>
+		{% for quiz in quizzes %}
+		<a href="{% url 'question_view' quiz.id %}">
+		<li tabindex=1>
+			<h3>{{quiz.name}}</h3>
+		</li>
+		</a>
+		{% endfor %}
+	</ul>
+</div>
+</div>
+{% endblock %}
+</body>
+</html>

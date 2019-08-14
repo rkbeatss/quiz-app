@@ -1,0 +1,40 @@
+<html>
+{% extends "template.html" %}
+<head>
+</head>
+<body>
+{% block page_content %}
+<div>
+<div class="modal-container">
+	<div class="modal-content">
+		<div class="modal-body">
+			<div class="row">
+				{% for question in questions %}
+				<h1> {{question.description}}</h1>
+				{% endfor %}
+				</div>
+				<div class="row" align='left'>
+				<ul>
+				{% for answer in answers %}
+				<a id ="{{answer.is_answer}}" onClick="checkCorrect(this.id)">
+				<li> {{answer.text}} </li></a>
+				{% endfor %}
+				</ul>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+<script type='text/javascript'>
+function checkCorrect(value){
+	if(value == 'True'){
+		window.alert("You got it right!");
+	} else {
+		window.alert("You got it wrong!")
+	}
+}
+</script>
+{% endblock %}
+</html>

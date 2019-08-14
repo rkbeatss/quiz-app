@@ -1,0 +1,21 @@
+<html>
+{% extends "template.html" %}
+{% load static %}
+<head>
+</head>
+<body>
+{% block page_content %}
+<div class="grid-container">
+{% for category in categories %}
+<div class="grid-item"> <!-- quizzes/quiz/categoryid -->
+<a href="{% url 'quizzes_view' category.pk %}">
+	<p><b>{{category.name}}</b></p>
+	<p>{{category.description}}</p>
+	<p><img src="{% static category.img %}" alt={{category.img}} style="width:200px;height:200px"></p>
+</a>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
+</body>
+</html>
